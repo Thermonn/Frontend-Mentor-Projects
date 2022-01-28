@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+body {
+    background-color: var(--very-light-gray);
+}
+
+/*---------Colors----------*/
+
+:root {
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray: hsl(0, 0%, 95%);
+
+    --sedans: hsl(31, 77%, 52%);
+    --suvs: hsl(184, 100%, 22%);
+    --luxury: hsl(179, 100%, 13%);
+}
+
+/*-------------------------*/
+
+#car-brands .container {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0%;
+    width: 915px;
+    height: 500px;
+    /*border-radius: 10px; why doesn't this work?*/
+}
+
+#car-brands .card {
+    box-sizing: border-box;
+    position: relative;
+    padding: 5%;
+    height: 500px;
+}
+#car-brands .card#sedans {
+    background-color: var(--sedans);
+    border-radius: 10px 0 0 10px;
+}
+#car-brands .card#suvs {
+    background-color: var(--suvs);
+}
+#car-brands .card#luxury {
+    background-color: var(--luxury);
+    border-radius: 0 10px 10px 0;
+}
+
+/*-------------------------*/
+
+#car-brands .card > .img {
+    width: 65px;
+    height: 40px;
+}
+
+#car-brands .card#sedans > .img { background-image: url(/images/icon-sedans.svg); }
+#car-brands .card#suvs   > .img { background-image: url(/images/icon-suvs.svg); }
+#car-brands .card#luxury > .img { background-image: url(/images/icon-luxury.svg); }
+
+/*-------------------------*/
+
+#car-brands .card > .heading {
+    font-family: 'Big Shoulders Display', monospace;
+    font-size: 38px;
+    color: var(--very-light-gray);
+    text-transform: uppercase;
+}
+#car-brands .card > .paragraph {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    color: var(--transparent-white);
+    line-height: 1.7;
+}
+
+/*-------------------------*/
+
+#car-brands .card > .button {
+    position: absolute;
+    bottom: 10%;
+    width: 145px;
+    height: 46px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid var(--very-light-gray);
+    background-color: var(--very-light-gray);
+    transition: 200ms;
+}
+#car-brands .button > .button-text {
+    display: inline-block;
+    font-family: 'Lexend Deca', sans-serif;
+    text-decoration: none;
+    transition: inherit;
+}
+#car-brands .button#sedans > .button-text { color: var(--sedans); }
+#car-brands .button#suvs   > .button-text { color: var(--suvs); }
+#car-brands .button#luxury > .button-text { color: var(--luxury); }
+
+/*-----Hover-----*/
+#car-brands .button#sedans:hover { background-color: var(--sedans); }
+#car-brands .button#suvs:hover   { background-color: var(--suvs); }
+#car-brands .button#luxury:hover { background-color: var(--luxury); }
+
+#car-brands .button:hover > .button-text {
+    color: var(--very-light-gray) !important;  /* Wouldn't work without !important for some reason */
+}
+
+/*-------------------------
+---------- Media ----------
+--------------------------*/
+
+@media (max-width: 375px) {
+    #car-brands .container {
+        flex-direction: column;
+        width: 95%;
+        height: 1320px;
+    }
+
+    #car-brands .card {
+        padding: 10%;
+        height: 440px;
+    }
+    #car-brands .card#sedans {
+        border-radius: 10px 10px 0 0;
+    }
+    #car-brands .card#luxury {
+        border-radius: 0 0 10px 10px;
+    }
+}
