@@ -52,9 +52,9 @@ body {
     height: 40px;
 }
 
-#car-brands .card#sedans > .img { background-image: url(/images/icon-sedans.svg); }
-#car-brands .card#suvs   > .img { background-image: url(/images/icon-suvs.svg); }
-#car-brands .card#luxury > .img { background-image: url(/images/icon-luxury.svg); }
+#car-brands .card#sedans > .img { background-image: url(./images/icon-sedans.svg); }
+#car-brands .card#suvs   > .img { background-image: url(./images/icon-suvs.svg); }
+#car-brands .card#luxury > .img { background-image: url(./images/icon-luxury.svg); }
 
 /*-------------------------*/
 
